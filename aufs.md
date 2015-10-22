@@ -26,30 +26,38 @@ deleted in an AUFS mount but not in the read-only branch.
 
 The AUFS state can be viewed by the sysfs. It is found under `/sys/fs/aufs`:
 
-  $> ls -la /sys/fs/aufs
-  -r--r--r-- 1 root root 4096 Oct 22 00:24 config
-  drwxr-xr-x 2 root root    0 Oct 22 00:23 si_8beacfc1019d8b7
-  ...
+```
+$> ls -la /sys/fs/aufs
+-r--r--r-- 1 root root 4096 Oct 22 00:24 config
+drwxr-xr-x 2 root root    0 Oct 22 00:23 si_8beacfc1019d8b7
+...
+```
 
 The `si_<ID>` entries found in `/sys/fs/aufs` represent different AUFS mounts.
 To find the SI ID of an AUFS mount, simple list the current mount points:
 
-  $> cat /proc/mounts | grep aufs
-  none /aufs/example_1/target aufs rw,relatime,si=8beacfc1019d8b7 0 0
-  ...
+```
+$> cat /proc/mounts | grep aufs
+none /aufs/example_1/target aufs rw,relatime,si=8beacfc1019d8b7 0 0
+...
+```
 
 The branches are not shown in the mount options listed in `/proc/mounts`.
 However given the SI ID, one can list the branches of a certain AUFS mount:
 
-  $> ls -la /sys/fs/aufs/si_8beacfc1019d8b7
-  -r--r--r-- 1 root root 4096 Oct 22 00:24 br0
-  -r--r--r-- 1 root root 4096 Oct 22 00:24 br1
-  -r--r--r-- 1 root root 4096 Oct 22 00:24 xi_path
+```
+$> ls -la /sys/fs/aufs/si_8beacfc1019d8b7
+-r--r--r-- 1 root root 4096 Oct 22 00:24 br0
+-r--r--r-- 1 root root 4096 Oct 22 00:24 br1
+-r--r--r-- 1 root root 4096 Oct 22 00:24 xi_path
+```
 
 Where the `br*` files contain the `BRANCH` syntax:
 
-  $> cat /sys/fs/aufs/si_8beacfc1019d8b7/br1
-  /aufs/example_1/ro=ro
+```
+$> cat /sys/fs/aufs/si_8beacfc1019d8b7/br1
+/aufs/example_1/ro=ro
+```
 
 ### What is sysfs
 
@@ -78,7 +86,7 @@ kernel parameters at runtime (`sysctl`).
 
 ### What is the difference between sysfs and procfs
 
-(Reference)[http://unix.stackexchange.com/questions/4884/what-is-the-difference-between-procfs-and-sysfs]
+[Reference](http://unix.stackexchange.com/questions/4884/what-is-the-difference-between-procfs-and-sysfs)
 
 `proc` is the old one, it is more or less without rules and structure. And at
 some point it was decided that proc was a little to chaotic and a new way was
@@ -132,6 +140,6 @@ there is not guarantee that/when this change will appear in the mount.
 
 ## Articles
 
-[1] http://www.thegeekstuff.com/2013/05/linux-aufs/
-[2] http://lwn.net/Articles/265240/
+1. http://www.thegeekstuff.com/2013/05/linux-aufs/
+2. http://lwn.net/Articles/265240/
 
