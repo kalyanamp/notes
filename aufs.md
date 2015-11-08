@@ -86,8 +86,6 @@ kernel parameters at runtime (`sysctl`).
 
 ### What is the difference between sysfs and procfs
 
-[Reference](http://unix.stackexchange.com/questions/4884/what-is-the-difference-between-procfs-and-sysfs)
-
 `proc` is the old one, it is more or less without rules and structure. And at
 some point it was decided that proc was a little to chaotic and a new way was
 needed. Then `sysfs` was created, and the new stuff that was added was put
@@ -138,8 +136,9 @@ there is not guarantee that/when this change will appear in the mount.
 2. `reval`: every change is propagated. This has a performance hit on AUFS.
 3. `notify`.
 
-## Articles
+## References
 
-1. http://www.thegeekstuff.com/2013/05/linux-aufs/
-2. http://lwn.net/Articles/265240/
-
+1. http://aufs.sourceforge.net/aufs3/man.html
+2. http://www.thegeekstuff.com/2013/05/linux-aufs/
+3. http://lwn.net/Articles/265240/
+4. http://unix.stackexchange.com/questions/4884/what-is-the-difference-between-procfs-and-sysfs
