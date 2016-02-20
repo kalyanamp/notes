@@ -2,7 +2,7 @@
 
 BASH is a very useful language for anyone who has to deal with operations and
 application/system/cluster deployment. However unless you spend each day of
-your day job writting BASH, it is easy to forget some of the unusual
+your day job writing BASH, it is easy to forget some of the unusual
 differences of BASH with other languages. This list of gotchas is meant to be
 a reminder of constructs I tend to forget all the time when I have to revisit
 BASH after a while.
@@ -60,15 +60,15 @@ registerContact "George" "123" "friends"
 
 In the previous example it is demonstrated how to exit from a function using
 the `return` keyword. Also I showed how to call a function in BASH, and at
-this point the resemblence with calling actual executables is very high.
+this point the resemblance with calling actual executables is very high.
 
 ### Returning/collecting output from a function
 
 Functions in BASH can return by `echo`ing strings. This strings will be
 forwarded to the stdout stream unless the function is called inside a subshell.
 Additionally the `return` keyword can be used with a numeric exit code. This
-call will not terminate the programm (like `exit`) but it will set the `$?`
-variable the the specified number:
+call will not terminate the program (like `exit`) but it will set the `$?`
+variable the specified number:
 
 ```bash
 terminateProcess() {

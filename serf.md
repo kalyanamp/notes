@@ -17,8 +17,8 @@ It is:
 It is extremely lightweight: it uses 5 to 10 MB of resident memory and
 primarily communicates using infrequent UDP messages.
 
-Serf makes use of gossip protocol to enstablish communication and transfer
-informaiton accross the cluster. This leads to two main direct results:
+Serf makes use of gossip protocol to establish communication and transfer
+information across the cluster. This leads to two main direct results:
 
 1. **Serf does not have a single point of failure.** Gossip protocols
   inherently work regardless of the number of nodes that go down.
@@ -26,10 +26,10 @@ informaiton accross the cluster. This leads to two main direct results:
   address of a single cluster member.** All the members in the cluster are
   equal and requests can be forwarded and travel across all nodes without the
   need to keep a list of these nodes.
-3. **Serf is eventually consistent.** Since truth is distributed accross the
+3. **Serf is eventually consistent.** Since truth is distributed across the
   cluster using gossiping, it takes time to synchronize all the nodes.
 
-The actual protocol is based on SWIM: Scalable Weekly-consistent Infrection-
+The actual protocol is based on SWIM: Scalable Weekly-consistent Infraction-
 style process group Membership protocol [2].
 
 ### Membership
@@ -52,7 +52,7 @@ detected. Recovery is done by periodically re-checking if the node came back.
 ### Custom event propagation
 
 The user may extend the Serf messages with custom events and queries. Serf
-will propate events and run associated scripts on the nodes. Queries work
+will propagate events and run associated scripts on the nodes. Queries work
 similarly with the result of the triggered scripts being returned to the
 caller.
 

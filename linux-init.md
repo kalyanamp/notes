@@ -19,8 +19,8 @@ address design limitations in the standard versions. These include:
 * Upstart: Previous Ubuntu's init system
 
 As of March 2015, systemd has been adopted by major Linux distributions
-although it remains controversial. The critisism against systemd comes from
-the fact that it is considered overengineered.
+although it remains controversial. The criticism against systemd comes from
+the fact that it is considered over engineered.
 
 ## History
 
@@ -84,7 +84,7 @@ state of the system; typically, other runlevels represent:
 * and various other states.
 
 Switching from one runlevel to another causes a per-runlevel set of scripts to
-be run, which typically mount filesystems, start or stop daemons, start or
+be run, which typically mount file systems, start or stop daemons, start or
 stop the X Window System, shutdown the machine, etc.
 
 The `/etc/inittab` file, defines what each configured runlevel does in a given

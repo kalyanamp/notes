@@ -6,12 +6,12 @@ These notes are made based on AUFS v3.x-rcN-201111205
 
 ### Branch
 
-A branch is nothing but a directory on the system. Any filesystem can be a
+A branch is nothing but a directory on the system. Any file system can be a
 branch, except sysfs, procfs and unionfs.
 
-* If you specify such filesystems as an aufs branch, aufs will return an error
+* If you specify such file systems as an aufs branch, aufs will return an error
 saying it is unsupported. If you enable `CONFIG_AUFS_ROBR`, you can use aufs as 
-a non-writable branch of another aufs.
+a non-writeable branch of another aufs.
 
 ### xino
 
@@ -73,7 +73,7 @@ virtual file system instead of being a purpose-built kernel mechanism.
 
 ### What is procfs
 
-The proc filesystem (`procfs`) is a special filesystem in Unix-like operating
+The proc file system (`procfs`) is a special file system in Unix-like operating
 systems that presents information about processes and other system information
 in a hierarchical file-like structure, providing a more convenient and
 standardized method for dynamically accessing process data held in the kernel
@@ -103,7 +103,7 @@ of the AUFS mount.
   - `permission := rw|ro|rr`
   - `attribute := wh|nolwh`
 * A branch should not be shared as the writable branch between multiple aufs.
-A readonly branch can be shared.
+A read-only branch can be shared.
 * The maximum number of branches is configurable at compile time (127 by
 default).
 * When an unknown permission or attribute is given, aufs sets `ro` to that

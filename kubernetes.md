@@ -7,7 +7,7 @@ make deploying containerized/microservice-based applications easy but powerful.
 Kubernetes is considered a scheduler with the broad sense. Other container
 schedulers include Swarm, Fleet and Mesos [[2]][KubeVs]. Swarm is developed by
 Docker and it essentially enables the operator to use a cluster as a single
-Docker host throught the `docker` CLI. Fleet is developed by CoreOS and is
+Docker host thought the `docker` CLI. Fleet is developed by CoreOS and is
 providing low level cluster management. Similarly, Mesos, originally developed
 at Berkeley, is a powerful and battle tested cluster management system. It
 can be used to deploy Swarm or Kubernetes and it is the only one of the four

@@ -9,7 +9,7 @@
 ### docker0 bridge
 
 By default docker will use the `docker0` bridge for all its containers.
-Assumming that you are running on an Ubuntu release, you need to install the
+Assuming that you are running on an Ubuntu release, you need to install the
 `bridge-utils` package to properly inspect the bridge attributes while playing
 with containers:
 
@@ -136,7 +136,7 @@ From the above results it seems that can draw a picture of how `docker0` works:
 
 ### Alternative networks
 
-Docker uses the `--network` argunent of the `docker run` command to specify
+Docker uses the `--network` argument of the `docker run` command to specify
 the container network. To list the Docker networks run:
 
 ```bash
