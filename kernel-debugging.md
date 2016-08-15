@@ -93,10 +93,27 @@ echo g > /proc/sysrq-trigger
 
 ### Connect
 
-Uncompress the `vmlinuz` image, found in `/boot` of the target VM. There is a
-script called `extract-vmlinux` in the kernel source tree
+Install the `linux-image-$(uname -r)-dbgsym` package in Ubuntu to get the Linux
+kernel symbols:
 
-In a different VM, map the same serial device. Then run:
+```bash
+apt-key adv --keyserver keyserver.ubuntu.com --recv-keys C8CAB6595FDFF622 
+codename=$(lsb_release -c | awk  '{print $2}')
+tee /etc/apt/sources.list.d/ddebs.list << EOF
+deb http://ddebs.ubuntu.com/ ${codename}      main restricted universe multiverse
+deb http://ddebs.ubuntu.com/ ${codename}-security main restricted universe multiverse
+deb http://ddebs.ubuntu.com/ ${codename}-updates  main restricted universe multiverse
+deb http://ddebs.ubuntu.com/ ${codename}-proposed main restricted universe multiverse
+EOF
+
+apt-get update
+apt-get install linux-image-$(uname -r)-dbgsym
+```
+
+Then copy the debug image to a different VM. The image can be found in:
+`/usr/lib/debug/boot/vmlinux-$(uname -r)`.
+
+In the different VM, map the same serial device. Then run:
 
 ```bash
 $> gdb ./vmlinux
@@ -111,3 +128,5 @@ $> gdb ./vmlinux
 3. https://www.kernel.org/doc/Documentation/trace/ftrace.txt
 4. https://lwn.net/Articles/365835/
 5. https://www.kernel.org/doc/Documentation/sysrq.txt
+7. https://wiki.ubuntu.com/Kernel/Systemtap
+8. https://wiki.ubuntu.com/Kernel/Systemtap
