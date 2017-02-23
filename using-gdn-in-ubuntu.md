@@ -63,5 +63,5 @@ curl https://github.com/contraband/gaol/releases/download/2016-8-22/gaol_linux -
 # replace the contents of the -c flag with the command you want to run
 
 # delete a container
-./goal destroy test
+./gaol destroy test
 ```
